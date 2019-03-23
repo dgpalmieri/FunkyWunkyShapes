@@ -12,7 +12,7 @@ public:
     Circle(double r);
     std::string intoPS() override;
     double getWidth() override;
-    double getWidth() override;
+    double getHeight() override;
 private:
     double _r;
 };
