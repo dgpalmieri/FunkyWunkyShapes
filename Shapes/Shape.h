@@ -11,8 +11,8 @@ class Shape {
 public:
     virtual ~Shape() = default;
     virtual std::string intoPS() = 0;
-    virtual double width() = 0;
-    virtual double height() = 0;
+    virtual double getWidth() = 0;
+    virtual double getHeight() = 0;
 
 };
 
