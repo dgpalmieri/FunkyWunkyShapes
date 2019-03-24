@@ -10,7 +10,7 @@ Circle::Circle(double r): _r(std::abs(r)){}
 
 std::string Circle::intoPS() {
     std::ofstream myfile;
-    myfile.open("Postscripttest.ps")
+    myfile.open("Postscripttest.ps");
     myfile << "gsave\n "
             << "0 0 "<<_r<< " 0 360 arc closepath\n"
             << "stroke\n";

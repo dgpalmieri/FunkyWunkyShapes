@@ -4,8 +4,10 @@
 
 
 #include <iostream>
+#include "Shapes/Shape.h"
+#include "Shapes/Circle.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    Circle C(300);
+    C.intoPS();
 }
