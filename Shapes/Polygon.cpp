@@ -24,11 +24,11 @@ double Polygon::getWidth() {
         width = (M_E * sin(M_PI * (_numOfSides - 1) / 2 * _numOfSides))/
                 (sin(M_PI / _numOfSides));
     }
-    else if (_numOfSides % 4 == 0){ //(e cos(π/n))/(sin(π/n))
+    else if (_numOfSides % 4 == 0){
         width = (M_E * cos(M_PI / _numOfSides)) /
                 (sin(M_PI / _numOfSides));
     }
-    else { // e/(sin(π/n))
+    else {
         width = M_E /
                 (sin(M_PI / _numOfSides));
     }
@@ -37,16 +37,15 @@ double Polygon::getWidth() {
 }
 
 double Polygon::getHeight() {
-    int height = 0;
+    double height = 0;
 
-    if (_numOfSides % 2 == 1){
-
+    if (_numOfSides % 2 == 1){ // e(1+cos(π/n))/(2sin(π/n))
+        height = M_E * (1 + cos(M_PI/_numOfSides)) /
+                (2 * sin(M_PI/_numOfSides));
     }
-    else if (_numOfSides % 4 == 0){
-
-    }
-    else {
-
+    else { // e(cos(π/n))/(sin(π/n))
+        height = M_E * (cos(M_PI/_numOfSides)) /
+                 (sin(M_PI/_numOfSides));
     }
 
     return height;
