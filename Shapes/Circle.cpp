@@ -6,23 +6,25 @@
 #include <cmath>
 #include <fstream>
 
-Circle::Circle(double r): _r(std::abs(r)){}
+Circle::Circle(double r): _radius(std::abs(r)){}
 
 std::string Circle::intoPS() {
     std::ofstream myfile;
-    myfile.open("Postscripttest.ps");
-    myfile << "gsave\n "
-            << "0 0 "<<_r<< " 0 360 arc closepath\n"
-            << "stroke\n";
+    myfile.open("PostScriptTest.ps");
+    myfile << "gsave\n"
+            << _radius << " " << _radius << " translate\n"
+            << "0 0 "<< _radius << " 0 360 arc\n"
+            << "stroke\n"
+            << "grestore";
     myfile.close();
     return "";
 }
 
 double Circle::getWidth(){
-    return 2*_r;
+    return 2*_radius;
 }
 
 double Circle::getHeight(){
-    return 2*_r;
+    return 2*_radius;
 }
 

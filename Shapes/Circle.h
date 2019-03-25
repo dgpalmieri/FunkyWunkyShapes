@@ -9,12 +9,12 @@
 
 class Circle : public Shape{
 public:
-    Circle(double r);
+    explicit Circle(double r);
     std::string intoPS() override;
     double getWidth() override;
     double getHeight() override;
 private:
-    double _r;
+    double _radius;
 };
 
 
