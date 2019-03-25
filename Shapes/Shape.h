@@ -10,10 +10,9 @@
 class Shape {
 public:
     virtual ~Shape() = default;
-    virtual std::string intoPS() = 0;
+    virtual void intoPS() = 0;
     virtual double getWidth() = 0;
     virtual double getHeight() = 0;
-
 };
 
 

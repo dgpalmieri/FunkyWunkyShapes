@@ -8,7 +8,7 @@
 
 Circle::Circle(double r): _radius(std::abs(r)){}
 
-std::string Circle::intoPS() {
+void Circle::intoPS() {
     std::ofstream myfile;
     myfile.open("PostScriptTest.ps");
     myfile << "gsave\n"
@@ -17,7 +17,6 @@ std::string Circle::intoPS() {
             << "stroke\n"
             << "grestore";
     myfile.close();
-    return "";
 }
 
 double Circle::getWidth(){

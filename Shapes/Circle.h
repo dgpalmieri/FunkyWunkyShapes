@@ -10,7 +10,7 @@
 class Circle : public Shape{
 public:
     explicit Circle(double r);
-    std::string intoPS() override;
+    void intoPS() override;
     double getWidth() override;
     double getHeight() override;
 private:
