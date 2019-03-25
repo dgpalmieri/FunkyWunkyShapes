@@ -14,7 +14,15 @@ Polygon::Polygon(int numOfSides, double sideLength)
     {}
 
 void Polygon::intoPS() {
+    std::ofstream myFile;
+    myFile.open("PostScriptTest.ps");
+    myFile  << "gsave\n"
+            << getWidth() << " " << getHeight() << " translate\n"
+            << "\n"
+            << "grestore\n";
 
+
+    myFile.close();
 }
 
 double Polygon::getWidth() {
