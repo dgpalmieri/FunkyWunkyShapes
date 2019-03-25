@@ -7,6 +7,11 @@
 #include "Shapes/Shape.h"
 #include "Shapes/Circle.h"
 
+
+#include "catch.hpp"
+
+
+
 int main() {
     Circle C(300);
     C.intoPS();
