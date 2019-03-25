@@ -9,14 +9,14 @@
 
 class Polygon: public Shape {
 public:
-    Polygon(int numOfSides, double sideLength);
+    Polygon(const int & numOfSides, const int & sideLength);
     void intoPS() override;
-    double getWidth() override;
-    double getHeight() override;
+    int getWidth() override;
+    int getHeight() override;
 
 private:
     int _numOfSides;
-    double _sideLength;
+    int _sideLength;
 };
 
 

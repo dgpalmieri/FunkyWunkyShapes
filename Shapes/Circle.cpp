@@ -6,7 +6,7 @@
 #include <cmath>
 #include <fstream>
 
-Circle::Circle(double r): _radius(std::abs(r)){}
+Circle::Circle(const int & r): _radius(std::abs(r)){}
 
 void Circle::intoPS() {
     std::ofstream myfile;
@@ -19,11 +19,11 @@ void Circle::intoPS() {
     myfile.close();
 }
 
-double Circle::getWidth(){
-    return 2*_radius;
+int Circle::getWidth(){
+    return 2 * _radius;
 }
 
-double Circle::getHeight(){
-    return 2*_radius;
+int Circle::getHeight(){
+    return 2 * _radius;
 }
 

@@ -7,9 +7,10 @@
 #include <fstream>
 
 #define _USE_MATH_DEFINES
+
 #include <cmath>
 
-Polygon::Polygon(int numOfSides, double sideLength)
+Polygon::Polygon(const int & numOfSides, const int & sideLength)
     : _numOfSides(numOfSides), _sideLength(sideLength)
     {}
 
@@ -25,8 +26,8 @@ void Polygon::intoPS() {
     myFile.close();
 }
 
-double Polygon::getWidth() {
-    double width = 0;
+int Polygon::getWidth() {
+    int width = 0;
 
     if (_numOfSides % 2 == 1){
         width = (M_E * sin(M_PI * (_numOfSides - 1) / 2 * _numOfSides))/
@@ -44,8 +45,8 @@ double Polygon::getWidth() {
     return width;
 }
 
-double Polygon::getHeight() {
-    double height = 0;
+int Polygon::getHeight() {
+    int height = 0;
 
     if (_numOfSides % 2 == 1){ // e(1+cos(π/n))/(2sin(π/n))
         height = M_E * (1 + cos(M_PI/_numOfSides)) /
