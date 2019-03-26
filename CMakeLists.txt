@@ -4,4 +4,5 @@ project(FunkyWunkyShapes)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(FunkyWunkyShapes
-    main.cpp Shapes/Shape.h Shapes/Circle.h Shapes/Circle.cpp Shapes/Rectangle.cpp Shapes/Rectangle.h)
+    main.cpp Shapes/Shape.h Shapes/Circle.h Shapes/Circle.cpp Shapes/Rectangle.cpp Shapes/Rectangle.h Shapes/Polygon.cpp
+        Shapes/Polygon.hpp Shapes/Spacer.cpp Shapes/Spacer.h Shapes/Square.h Shapes/Square.cpp)

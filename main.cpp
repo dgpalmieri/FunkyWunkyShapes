@@ -6,7 +6,9 @@
 #include <iostream>
 #include "Shapes/Shape.h"
 #include "Shapes/Circle.h"
-
+#include "Shapes/Polygon.hpp"
+#include "Shapes/Square.h"
+#include "Shapes/Rectangle.h"
 
 #include "catch.hpp"
 
@@ -15,4 +17,5 @@
 int main() {
     Circle C(300);
     C.intoPS();
+
 }
