@@ -20,7 +20,7 @@ void Spacer::intoPS() {
     << _width << " " << _height << " lineto\n"
     << "0 " << _height << " lineto\n"
     << "0 0 lineto\n"
-    << "stroke\n"
+    << "stroke\n"                   //I might have done it the dumb way, if so just comment out line 17 and 23
     << "grestore";
     myfile.close();
 }
