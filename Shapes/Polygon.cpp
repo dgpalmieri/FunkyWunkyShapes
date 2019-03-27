@@ -17,11 +17,27 @@ Polygon::Polygon(const int & numOfSides, const int & sideLength)
 void Polygon::intoPS() {
     std::ofstream myFile;
     myFile.open("PostScriptTest.ps");
-    myFile  << "gsave\n"
-            << getWidth() << " " << getHeight() << " translate\n"
+    myFile  << "newpath"
             << "\n"
-            << "grestore\n";
-
+            << getWidth() << " " << getHeight() << " moveto"
+            //<< "200 200 moveto"
+            << "\n"
+            << "gsave"
+            << "\n"
+            << "/angle 360 " << _numOfSides << " div def"
+            << "\n"
+            << "1 1 " << _numOfSides << " {"
+            << "\n"
+            << _sideLength << " 0 rlineto"
+            << "\n"
+            << "angle rotate"
+            << "\n"
+            << "} for"
+            << "\n"
+            << "stroke"
+            << "\n"
+            << "grestore"
+            << "\n";
 
     myFile.close();
 }
