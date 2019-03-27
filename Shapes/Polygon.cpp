@@ -20,7 +20,6 @@ void Polygon::intoPS() {
     myFile  << "newpath"
             << "\n"
             << getWidth() << " " << getHeight() << " moveto"
-            //<< "200 200 moveto"
             << "\n"
             << "gsave"
             << "\n"
@@ -46,15 +45,15 @@ int Polygon::getWidth() {
     int width = 0;
 
     if (_numOfSides % 2 == 1){
-        width = (M_E * sin(M_PI * (_numOfSides - 1) / 2 * _numOfSides))/
+        width = _sideLength * sin((M_PI * (_numOfSides - 1)) / (2 * _numOfSides)) /
                 (sin(M_PI / _numOfSides));
     }
     else if (_numOfSides % 4 == 0){
-        width = (M_E * cos(M_PI / _numOfSides)) /
+        width = _sideLength * cos(M_PI / _numOfSides) /
                 (sin(M_PI / _numOfSides));
     }
     else {
-        width = M_E /
+        width = _sideLength /
                 (sin(M_PI / _numOfSides));
     }
 
@@ -64,12 +63,12 @@ int Polygon::getWidth() {
 int Polygon::getHeight() {
     int height = 0;
 
-    if (_numOfSides % 2 == 1){ // e(1+cos(π/n))/(2sin(π/n))
-        height = M_E * (1 + cos(M_PI/_numOfSides)) /
+    if (_numOfSides % 2 == 1){
+        height = _sideLength * (1 + cos(M_PI/_numOfSides)) /
                 (2 * sin(M_PI/_numOfSides));
     }
-    else { // e(cos(π/n))/(sin(π/n))
-        height = M_E * (cos(M_PI/_numOfSides)) /
+    else {
+        height = _sideLength * (cos(M_PI/_numOfSides)) /
                  (sin(M_PI/_numOfSides));
     }
 
