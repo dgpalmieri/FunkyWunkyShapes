@@ -26,4 +26,3 @@ double Circle::getWidth(){
 double Circle::getHeight(){
     return 2 * _radius;
 }
-

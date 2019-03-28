@@ -42,7 +42,7 @@ void Polygon::intoPS() {
 }
 
 double Polygon::getWidth() {
-    int width = 0;
+    double width = 0;
 
     if (_numOfSides % 2 == 1){
         width = _sideLength * sin((M_PI * (_numOfSides - 1)) / (2 * _numOfSides)) /
@@ -61,7 +61,7 @@ double Polygon::getWidth() {
 }
 
 double Polygon::getHeight() {
-    int height = 0;
+    double height = 0;
 
     if (_numOfSides % 2 == 1){
         height = _sideLength * (1 + cos(M_PI/_numOfSides)) /

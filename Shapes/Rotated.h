@@ -10,7 +10,7 @@
 
 class Rotated : public Shape{
 public:
-    Rotated(std::unique_ptr<Shape>, const int angle);
+    Rotated(std::unique_ptr<Shape>,int angle);
     void intoPS() override;
     double getWidth() override;
     double getHeight() override;

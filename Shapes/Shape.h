@@ -6,13 +6,15 @@
 #define FUNKYWUNKYSHAPES_SHAPE_H
 
 #include <string>
+#include <utility>
 
 class Shape {
 public:
-    virtual ~Shape() = default;
+    virtual ~Shape();
     virtual void intoPS() = 0;
     virtual double getWidth() = 0;
     virtual double getHeight() = 0;
+    virtual std::pair<double,double> getCenter();
 };
 
 
