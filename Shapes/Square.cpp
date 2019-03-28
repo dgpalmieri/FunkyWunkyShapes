@@ -4,5 +4,5 @@
 
 #include "Square.h"
 
-Square::Square(const int & length): Rectangle(length, length){}
+Square::Square(const int & length): Polygon(4, length){}
 
