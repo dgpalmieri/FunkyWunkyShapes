@@ -5,9 +5,9 @@
 #ifndef FUNKYWUNKYSHAPES_SQUARE_H
 #define FUNKYWUNKYSHAPES_SQUARE_H
 
-#include "Rectangle.h"
+#include "Polygon.hpp"
 
-class Square : public Rectangle{
+class Square : public Polygon{
 public:
     explicit Square(const int & length);
 };
