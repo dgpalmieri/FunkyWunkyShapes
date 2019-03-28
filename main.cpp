@@ -15,7 +15,7 @@
 
 
 int main() {
-    Circle C(300);
+    Square C(300);
     C.intoPS();
 
 }

@@ -26,7 +26,7 @@ void Polygon::intoPS() {
     myFile.close();
 }
 
-int Polygon::getWidth() {
+double Polygon::getWidth() {
     int width = 0;
 
     if (_numOfSides % 2 == 1){
@@ -45,7 +45,7 @@ int Polygon::getWidth() {
     return width;
 }
 
-int Polygon::getHeight() {
+double Polygon::getHeight() {
     int height = 0;
 
     if (_numOfSides % 2 == 1){ // e(1+cos(π/n))/(2sin(π/n))

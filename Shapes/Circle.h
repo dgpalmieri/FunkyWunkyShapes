@@ -11,8 +11,8 @@ class Circle : public Shape{
 public:
     explicit Circle(const int & r);
     void intoPS() override;
-    int getWidth() override;
-    int getHeight() override;
+    double getWidth() override;
+    double getHeight() override;
 private:
     int _radius;
 };

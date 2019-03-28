@@ -19,11 +19,11 @@ void Circle::intoPS() {
     myfile.close();
 }
 
-int Circle::getWidth(){
+double Circle::getWidth(){
     return 2 * _radius;
 }
 
-int Circle::getHeight(){
+double Circle::getHeight(){
     return 2 * _radius;
 }
 

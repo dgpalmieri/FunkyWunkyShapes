@@ -11,8 +11,8 @@ class Spacer : public Shape{
 public:
     explicit Spacer(const double & width, const double & height);
     void intoPS() override;
-    int getWidth() override;
-    int getHeight() override;
+    double getWidth() override;
+    double getHeight() override;
 private:
     double _width;
     double _height;

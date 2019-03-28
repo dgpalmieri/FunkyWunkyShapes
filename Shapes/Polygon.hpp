@@ -11,8 +11,8 @@ class Polygon: public Shape {
 public:
     Polygon(const int & numOfSides, const int & sideLength);
     void intoPS() override;
-    int getWidth() override;
-    int getHeight() override;
+    double getWidth() override;
+    double getHeight() override;
 
 private:
     int _numOfSides;

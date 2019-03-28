@@ -26,11 +26,11 @@ void Rectangle::intoPS() {
     myfile.close();
 }
 
-int Rectangle::getWidth(){
+double Rectangle::getWidth(){
     return _width;
 }
 
-int Rectangle::getHeight(){
+double Rectangle::getHeight(){
     return _height;
 }
 

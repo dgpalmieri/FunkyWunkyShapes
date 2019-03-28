@@ -25,11 +25,11 @@ void Spacer::intoPS() {
     myfile.close();
 }
 
-int Spacer::getWidth(){
+double Spacer::getWidth(){
     return _width;
 }
 
-int Spacer::getHeight(){
+double Spacer::getHeight(){
     return _height;
 }
 
