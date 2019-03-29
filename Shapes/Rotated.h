@@ -14,6 +14,7 @@ public:
     void intoPS() override;
     double getWidth() override;
     double getHeight() override;
+    std::pair<double,double> getCenter() override;
 private:
     std::unique_ptr<Shape> _shape;
     int _angle;
