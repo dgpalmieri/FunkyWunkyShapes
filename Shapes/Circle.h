@@ -13,6 +13,7 @@ public:
     void intoPS() override;
     double getWidth() override;
     double getHeight() override;
+    std::pair<double,double> getCenter() override;
 private:
     int _radius;
 };

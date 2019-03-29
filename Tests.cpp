@@ -16,9 +16,9 @@
 
 
 int main() {
-    Square S(200);
+    Polygon S(5,200);
     S.intoPS();
-    //Rotated R(std::make_unique<Polygon>(4,200), 90);
+    //Rotated R(std::make_unique<Polygon>(5,200), 90); // 461.653 485.41
     //R.intoPS();
 
 }

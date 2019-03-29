@@ -74,3 +74,8 @@ double Polygon::getHeight() {
 
     return height;
 }
+
+std::pair<double,double> Polygon::getCenter(){
+    return std::make_pair(getWidth()+(_sideLength/2.0),getHeight()+(getHeight()/2.0));
+}
+
