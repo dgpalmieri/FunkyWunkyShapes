@@ -6,8 +6,6 @@
 #include <iostream>
 #include <fstream>
 
-#define _USE_MATH_DEFINES
-
 #include <cmath>
 
 Polygon::Polygon(const int & numOfSides, const int & sideLength)
