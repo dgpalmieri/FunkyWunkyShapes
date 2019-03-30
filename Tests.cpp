@@ -10,6 +10,8 @@
 #include "Shapes/Square.h"
 #include "Shapes/Rectangle.h"
 #include "Shapes/Rotated.h"
+#include "Shapes/Triangle.h"
+#include "Shapes/Spacer.h"
 
 #include "catch.hpp"
 
