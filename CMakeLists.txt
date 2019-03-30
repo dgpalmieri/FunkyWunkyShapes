@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(FunkyWunkyShapes
     Tests.cpp Shapes/Shape.h Shapes/Circle.h Shapes/Circle.cpp Shapes/Rectangle.cpp Shapes/Rectangle.h Shapes/Polygon.cpp
         Shapes/Polygon.hpp Shapes/Spacer.cpp Shapes/Spacer.h Shapes/Square.h Shapes/Square.cpp Shapes/Rotated.cpp Shapes/Rotated.h
-        Shapes/Shape.cpp Shapes/Triangle.cpp Shapes/Triangle.h)
+        Shapes/Shape.cpp)

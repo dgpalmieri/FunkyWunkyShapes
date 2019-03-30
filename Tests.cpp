@@ -2,6 +2,7 @@
 // Dylan Palmieri, Andrew Parker, Josh Byam
 // starting point for Project 2, CS372
 #include<utility>
+#include<fstream>
 
 #include <iostream>
 #include "Shapes/Shape.h"
@@ -18,9 +19,12 @@
 
 
 int main() {
-    Polygon S(5,200);
-    S.intoPS();
-    //Rotated R(std::make_unique<Polygon>(5,200), 90);  //423.607 461.653
-    //R.intoPS();
+    std::ofstream myfile;
+    myfile.open("PostScriptTest.ps", std::ofstream::out | std::ofstream::trunc);//Clears the file contents
+    myfile.close();
 
+    //Polygon S(5,200);
+    //S.intoPS();
+    Rotated R(std::make_unique<Polygon>(5,200), 90);  //423.607 461.653
+    R.intoPS();
 }

@@ -11,12 +11,12 @@ Rotated::Rotated(std::unique_ptr<Shape> shape, const int angle): _shape(std::mov
 
 void Rotated::intoPS(){
     std::ofstream myfile;
-    myfile.open("PostScriptTest.ps");
+    myfile.open("PostScriptTest.ps", std::ios_base::app);
     myfile << _shape->getCenter().first << " " <<  _shape->getCenter().second << " translate\n"
             << _angle << " rotate\n"
             << _shape->getCenter().first*(-1) << " " <<  _shape->getCenter().second*(-1) << " translate\n";
-    _shape->intoPS();
     myfile.close();
+    _shape->intoPS();
 }
 double Rotated::getWidth(){
     if(_angle == 90 || _angle == 270){
@@ -32,3 +32,6 @@ double Rotated::getHeight(){
 }
 
 std::pair<double,double> Rotated::getCenter(){}
+void Rotated::intoPS(const std::string & fileName){}
+void Rotated::intoPS(std::fstream & fileStream){}
+void Rotated::intoPS(std::fstream & fileStream, const std::string & fileName){}
