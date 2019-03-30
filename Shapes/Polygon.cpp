@@ -15,9 +15,10 @@ Polygon::Polygon(const int & numOfSides, const int & sideLength)
     {}
 
 void Polygon::intoPS() {
-    std::ofstream myFile;
-    myFile.open("PostScriptTest.ps");
-    myFile  << "newpath"
+    std::ofstream myfile;
+
+    myfile.open("PostScriptTest.ps", std::ios_base::app);
+    myfile << "newpath"
             << "\n"
             << getWidth() << " " << getHeight() << " moveto"
             << "\n"
@@ -37,8 +38,7 @@ void Polygon::intoPS() {
             << "\n"
             << "grestore"
             << "\n";
-
-    myFile.close();
+    myfile.close();
 }
 
 double Polygon::getWidth() {
