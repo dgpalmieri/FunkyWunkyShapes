@@ -13,18 +13,32 @@ Rectangle::Rectangle(const double & width, const double & height)
 //but I'm not sure where its supposed to start from. I just picked 0 because it seemed good.
 //If it needs to be somewhere else just change all the zeros to the starting point.
 void Rectangle::intoPS() {
-    std::ofstream myfile;
-    myfile.open("PostScriptTest.ps");
-    myfile << "gsave\n"
-    << "0 0 moveto\n"
-    << _width << " 0 lineto\n"
-    << _width << " " << _height << " lineto\n"
-    << "0 " << _height << " lineto\n"
-    << "0 0 lineto\n"
-    << "stroke\n"
-    << "grestore";
-    myfile.close();
+    std::fstream myOut;
+    return this->intoPS(myOut, "PostScriptTest.ps");
 }
+
+void Rectangle::intoPS(const std::string &fileName) {
+    std::fstream myOut;
+    return this->intoPS(myOut, fileName);
+}
+
+void Rectangle::intoPS(std::fstream &fileStream) {
+    return this->intoPS(fileStream, "PostScriptTest.ps");
+}
+
+void Rectangle::intoPS(std::fstream &fileStream, const std::string &fileName) {
+    fileStream.open(fileName);
+    fileStream << "gsave\n"
+           << "0 0 moveto\n"
+           << _width << " 0 lineto\n"
+           << _width << " " << _height << " lineto\n"
+           << "0 " << _height << " lineto\n"
+           << "0 0 lineto\n"
+           << "stroke\n"
+           << "grestore";
+    fileStream.close();
+}
+
 
 double Rectangle::getWidth(){
     return _width;
@@ -33,5 +47,4 @@ double Rectangle::getWidth(){
 double Rectangle::getHeight(){
     return _height;
 }
-
 
