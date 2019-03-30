@@ -39,3 +39,7 @@ double Circle::getWidth(){
 double Circle::getHeight(){
     return 2 * _radius;
 }
+
+std::pair<double,double> Circle::getCenter(){
+
+}

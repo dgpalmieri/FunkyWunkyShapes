@@ -5,7 +5,3 @@
 #include "Shape.h"
 
 Shape::~Shape() = default;
-
-std::pair<double, double> Shape::getCenter(){
-    return std::make_pair(getWidth()+getWidth()/2,getHeight()+getHeight()/2);
-}

@@ -31,3 +31,4 @@ double Rotated::getHeight(){
     return _shape->getHeight();
 }
 
+std::pair<double,double> Rotated::getCenter(){}

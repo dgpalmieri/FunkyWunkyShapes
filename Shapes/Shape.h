@@ -17,7 +17,7 @@ public:
     virtual void intoPS(std::fstream & fileStream, const std::string & fileName) = 0;
     virtual double getWidth() = 0;
     virtual double getHeight() = 0;
-    virtual std::pair<double,double> getCenter();
+    virtual std::pair<double,double> getCenter() = 0;
 };
 
 
