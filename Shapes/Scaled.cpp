@@ -22,17 +22,25 @@ void Scaled::intoPS(std::fstream &fileStream) {
 }
 
 void Scaled::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    fileStream.open(fileName, std::ios_base::app);
-    //fileStream <<
-    fileStream.close();
+    std::ofstream myfile;
+    myfile.open("PostScriptTest.ps", std::ios_base::app);
+    myfile << _fx << " " <<  _fy << " scale\n";
+    myfile.close();
+    _shape->intoPS();
+    myfile.open("PostScriptTest.ps", std::ios_base::app);
+    myfile << 1/_fx << " " <<  1/_fy << " scale\n";
+    myfile.close();
 }
 
-double Scaled::getWidth(){
-
+double Scaled::getWidth() {
+    return (_shape->getWidth() * _fx);
 }
-double Scaled::getHeight(){
 
+double Scaled::getHeight() {
+    return (_shape->getHeight() * _fy);
 }
-std::pair<double,double> Scaled::getCenter(){
 
+std::pair<double, double> Scaled::getCenter() {
+    return std::make_pair((_shape->getCenter().first) * _fx,
+                          (_shape->getCenter().second) * _fy);
 }

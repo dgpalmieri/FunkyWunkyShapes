@@ -23,7 +23,7 @@ int main() {
     myfile.open("PostScriptTest.ps", std::ofstream::out | std::ofstream::trunc);//Clears the file contents
     myfile.close();
 
-    Rectangle R2(100, 500);
+    Scaled R2(std::make_unique<Square>(20), 3, 3);
     R2.intoPS();
     Rotated R(std::make_unique<Polygon>(7, 100), 180);
     R.intoPS();

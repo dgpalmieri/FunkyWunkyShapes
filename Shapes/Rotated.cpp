@@ -22,7 +22,9 @@ double Rotated::getHeight(){
     return _shape->getHeight();
 }
 
-std::pair<double,double> Rotated::getCenter(){}
+std::pair<double,double> Rotated::getCenter(){
+    return _shape->getCenter();
+}
 
 void Rotated::intoPS() {
     std::fstream myOut;

@@ -29,7 +29,8 @@ void Polygon::intoPS(std::fstream &fileStream) {
 
 void Polygon::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios_base::app);
-    fileStream << "newpath"
+    fileStream << "% Polygon\n"
+               << "newpath"
                << "\n"
                << getWidth() << " " << getHeight() << " moveto"
                << "\n"
