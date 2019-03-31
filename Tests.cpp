@@ -13,7 +13,7 @@
 #include "Shapes/Rotated.h"
 //#include "Shapes/Triangle.h"
 #include "Shapes/Spacer.h"
-
+#include "Shapes/Scaled.h"
 #include "catch.hpp"
 
 
@@ -25,6 +25,6 @@ int main() {
 
     Rectangle R2(100, 500);
     R2.intoPS();
-    Rotated R(std::make_unique<Rectangle>(100, 500), 90);  //423.607 461.653
+    Rotated R(std::make_unique<Polygon>(7, 100), 180);
     R.intoPS();
 }
