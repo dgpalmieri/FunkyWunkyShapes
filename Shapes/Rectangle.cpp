@@ -27,7 +27,7 @@ void Rectangle::intoPS(std::fstream &fileStream) {
 }
 
 void Rectangle::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    fileStream.open(fileName);
+    fileStream.open(fileName, std::ios_base::app);
     fileStream << "gsave\n"
            << "0 0 moveto\n"
            << _width << " 0 lineto\n"
@@ -35,7 +35,7 @@ void Rectangle::intoPS(std::fstream &fileStream, const std::string &fileName) {
            << "0 " << _height << " lineto\n"
            << "0 0 lineto\n"
            << "stroke\n"
-           << "grestore";
+           << "grestore\n";
     fileStream.close();
 }
 
@@ -48,3 +48,6 @@ double Rectangle::getHeight(){
     return _height;
 }
 
+std::pair<double,double> Rectangle::getCenter(){
+    return std::make_pair(getWidth()/2,getHeight()/2);
+}

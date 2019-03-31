@@ -11,7 +11,7 @@
 #include "Shapes/Square.h"
 #include "Shapes/Rectangle.h"
 #include "Shapes/Rotated.h"
-#include "Shapes/Triangle.h"
+//#include "Shapes/Triangle.h"
 #include "Shapes/Spacer.h"
 
 #include "catch.hpp"
@@ -23,8 +23,8 @@ int main() {
     myfile.open("PostScriptTest.ps", std::ofstream::out | std::ofstream::trunc);//Clears the file contents
     myfile.close();
 
-    //Polygon S(5,200);
-    //S.intoPS();
-    Rotated R(std::make_unique<Polygon>(5,200), 90);  //423.607 461.653
+    Rectangle R2(100, 500);
+    R2.intoPS();
+    Rotated R(std::make_unique<Rectangle>(100, 500), 90);  //423.607 461.653
     R.intoPS();
 }
