@@ -18,6 +18,7 @@
 //#include "Shapes/Triangle.h"
 #include "Shapes/Spacer.h"
 #include "Shapes/Scaled.h"
+#include "Shapes/Smiley.h"
 #include "catch.hpp"
 
 
