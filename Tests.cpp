@@ -44,6 +44,7 @@ TEST_CASE("Return correct width", "[getWidth()]") {
 
 TEST_CASE("Return correct center point", "[getCenter()]") {
     Square S(5);
+    Smiley x(35);
     class Polygon P(6, 5);
     class Polygon P2(7,10);
     REQUIRE(round( S.getCenter().first * 1000.0 ) / 1000.0 == 7.5);

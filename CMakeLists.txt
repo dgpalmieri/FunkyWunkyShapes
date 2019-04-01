@@ -13,4 +13,4 @@ add_executable(FunkyWunkyShapes
                Shapes/Square.h Shapes/Square.cpp
                Shapes/Rotated.cpp Shapes/Rotated.h
                Shapes/Scaled.cpp Shapes/Scaled.h
-               Shapes/Smiley.h Shapes/Scaled.cpp)
+               Shapes/Smiley.h Shapes/Smiley.cpp)
