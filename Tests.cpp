@@ -2,7 +2,7 @@
 // Dylan Palmieri, Andrew Parker, Josh Byam
 // starting point for Project 2, CS372
 
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+//#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 
 
 #include<utility>
@@ -21,7 +21,7 @@
 #include "Shapes/Smiley.h"
 #include "catch.hpp"
 
-
+/*
 TEST_CASE("Return correct height", "[getHeight()]") {
     Circle C(10);
     Square S(5);
@@ -51,14 +51,20 @@ TEST_CASE("Return correct center point", "[getCenter()]") {
     REQUIRE(round( S.getCenter().second * 1000.0 ) / 1000.0 == 7.5);
     REQUIRE(round( P.getCenter().first * 1000.0 ) / 1000.0 == 12.5);
     REQUIRE(round( P.getCenter().second * 1000.0 ) / 1000.0 == 12.99);
-}
+}*/
 
 
-/*
+
 int main() {
+
+    std::ofstream myfile;
+    myfile.open("PostScript.ps", std::ofstream::out | std::ofstream::trunc);//Clears the file contents
+    myfile.close();
 
     Scaled R2(std::make_unique<Square>(20), 3, 3);
     R2.intoPS();
+    Polygon X(8, 50);
+    X.intoPS();
     Rotated R(std::make_unique<Polygon>(7, 100), 180);
     R.intoPS();
-}*/
+}
