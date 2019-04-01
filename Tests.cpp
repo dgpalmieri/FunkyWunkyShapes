@@ -15,7 +15,7 @@
 #include "Shapes/Square.h"
 #include "Shapes/Rectangle.h"
 #include "Shapes/Rotated.h"
-//#include "Shapes/Triangle.h"
+#include "Shapes/Triangle.h"
 #include "Shapes/Spacer.h"
 #include "Shapes/Scaled.h"
 #include "Shapes/Smiley.h"
@@ -67,4 +67,7 @@ int main() {
     X.intoPS();
     Rotated R(std::make_unique<Polygon>(7, 100), 180);
     R.intoPS();
+
+    Triangle T(10);
+    T.intoPS();
 }
