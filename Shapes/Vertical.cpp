@@ -9,14 +9,13 @@
 #include <map>
 
 // Takes a map that holds pairs of (Shape objects, string shapeID)
-Vertical::Vertical(const map<Shape,string> myShapes){
+Vertical::Vertical(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)){
     int width = 0;
     int height = 0;
-    std::map<Shape, string>::iterator it = myShapes.begin();
-    for(; it != myShapes.end(); it++)
+    for (auto i = _shapes.begin(); i != _shapes.end(); ++i)
     {
-        height += it->second.getHeight();
-        if ( it->second.getWidth() > width ) width = it->second.getWidth();
+        height += (*i)->getHeight();
+        if ( (*i)->getWidth() > width ) width = (*i)->getWidth();
     }
     
     _width = width;
@@ -40,12 +39,14 @@ void Vertical::intoPS(std::fstream &fileStream) {
 
 void Vertical::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios::app);
-    fileStream << "gsave\n"
+    fileStream << "gsave\n";
 
-    //What goes here I'm still not sure of
+    for (auto i = _shapes.begin(); i != _shapes.end(); ++i) {
+        (*i)->intoPS(fileStream, fileName);
+        fileStream << "\n0 " << (*i)->getHeight() << " translate\n";
+    }
 
-    << "stroke\n"
-    << "grestore";
+    fileStream << "\ngrestore\n";
     fileStream.close();
 }
 

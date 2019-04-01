@@ -6,10 +6,13 @@
 #define FUNKYWUNKYSHAPES_HORIZONTAL_H
 
 #include "Shape.h"
+#include <vector>
+#include <string>
+#include <memory>
 
 class Horizontal : public Shape{
 public:
-    explicit Horizontal(const map<Shape,string> myShapes); //Don't know if it should be by reference
+    explicit Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes);
     void intoPS() override;
     void intoPS(const std::string & fileName) override;
     void intoPS(std::fstream & fileStream) override;
@@ -19,6 +22,7 @@ public:
 private:
     double _width;
     double _height;
+    std::vector<std::unique_ptr<Shape>> _shapes;
 };
 
 

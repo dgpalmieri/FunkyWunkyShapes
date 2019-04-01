@@ -11,10 +11,13 @@
 
 
 #include "Shape.h"
+#include <string>
+#include <memory>
+#include <vector>
 
 class Layered : public Shape{
 public:
-    explicit Layered(const map<Shape, string> myShapes); //Don't know if it should be by reference
+    explicit Layered(std::vector<std::unique_ptr<Shape>> & myShapes);
     void intoPS() override;
     void intoPS(const std::string & fileName) override;
     void intoPS(std::fstream & fileStream) override;
@@ -24,6 +27,7 @@ public:
 private:
     double _width;
     double _height;
+    std::vector<std::unique_ptr<Shape>> _shapes;
 };
 
 
