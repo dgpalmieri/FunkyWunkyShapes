@@ -90,6 +90,6 @@ double Polygon::getHeight() {
 }
 
 std::pair<double,double> Polygon::getCenter(){
-    return std::make_pair(getWidth()+(_sideLength/2.0),getHeight()+(getHeight()/2.0));
+    return std::make_pair(getWidth()+(_sideLength/2.0),getHeight() * 1.5);
 }
 

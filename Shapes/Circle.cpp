@@ -42,5 +42,5 @@ double Circle::getHeight(){
 }
 
 std::pair<double,double> Circle::getCenter(){
-
+    return std::make_pair(0, 0);
 }
