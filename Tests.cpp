@@ -21,13 +21,24 @@
 #include "catch.hpp"
 
 
-TEST_CASE("Return correct height", "[getheight()]") {
+TEST_CASE("Return correct height", "[getHeight()]") {
     Circle C(10);
     Square S(5);
     class Polygon P(6, 5);
     REQUIRE(C.getHeight() == 20.0);
     REQUIRE(round( S.getHeight() * 1000.0 ) / 1000.0 == 5.0);
     REQUIRE(round( P.getHeight() * 1000.0 ) / 1000.0 == 8.66);
+}
+
+TEST_CASE("Return correct width", "[getWidth()]") {
+    Circle C(10);
+    Square S(5);
+    class Polygon P(6, 5);
+    class Polygon P2(7,10);
+    REQUIRE(C.getWidth() == 20.0);
+    REQUIRE(round( S.getWidth() * 1000.0 ) / 1000.0 == 5.0);
+    REQUIRE(round( P.getWidth() * 1000.0 ) / 1000.0 == 10);
+    REQUIRE(round( P2.getWidth() * 1000.0 ) / 1000.0 == 22.47);
 }
 
 
