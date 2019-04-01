@@ -25,6 +25,7 @@ void Smiley::intoPS(std::fstream &fileStream) {
 void Smiley::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName);
     fileStream << "gsave \n"
+    << "matrix currentmatrix /originmat exch def \n"
     << "/umatrix {originmat matrix concatmatrix setmatrix} def \n"
     << "[28.3465 0 0 28.3465 10.5 100.0] umatrix \n"
     << "0 setgray \n"
