@@ -19,9 +19,6 @@
 
 
 int main() {
-    std::ofstream myfile;
-    myfile.open("PostScriptTest.ps", std::ofstream::out | std::ofstream::trunc);//Clears the file contents
-    myfile.close();
 
     Scaled R2(std::make_unique<Square>(20), 3, 3);
     R2.intoPS();

@@ -23,7 +23,7 @@ void Rectangle::intoPS(const std::string &fileName) {
 }
 
 void Rectangle::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScriptTest.ps");
+    return this->intoPS(fileStream, "PostScript.ps");
 }
 
 void Rectangle::intoPS(std::fstream &fileStream, const std::string &fileName) {

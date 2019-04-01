@@ -26,7 +26,7 @@ void Spacer::intoPS(std::fstream &fileStream) {
 }
 
 void Spacer::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    fileStream.open(fileName, std::ios_base::app);
+    fileStream.open(fileName, std::ios::app);
     fileStream << "% Spacer\n"
                << "gsave\n"
                << "0 0 moveto\n"

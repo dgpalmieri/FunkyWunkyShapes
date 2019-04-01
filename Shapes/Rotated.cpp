@@ -28,7 +28,7 @@ std::pair<double,double> Rotated::getCenter(){
 
 void Rotated::intoPS() {
     std::fstream myOut;
-    return this->intoPS(myOut, "PostScriptTest.ps");
+    return this->intoPS(myOut, "PostScript.ps");
 }
 
 void Rotated::intoPS(const std::string &fileName) {
@@ -37,15 +37,14 @@ void Rotated::intoPS(const std::string &fileName) {
 }
 
 void Rotated::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScriptTest.ps");
+    return this->intoPS(fileStream, "PostScript.ps");
 }
 
 void Rotated::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    std::ofstream myfile;
-    myfile.open("PostScriptTest.ps", std::ios_base::app);
-    myfile << _shape->getCenter().first << " " <<  _shape->getCenter().second << " translate\n"
+    fileStream.open(fileName, std::ios::app);
+    fileStream << _shape->getCenter().first << " " <<  _shape->getCenter().second << " translate\n"
            << _angle << " rotate\n"
            << _shape->getCenter().first*(-1) << " " <<  _shape->getCenter().second*(-1) << " translate\n";
-    myfile.close();
+    fileStream.close();
     _shape->intoPS();
 }

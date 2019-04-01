@@ -27,21 +27,21 @@ Layered::Layered(const map<Shape,string> myShapes) {
 
 }
 void Layered::intoPS() {
-    std::fstream myOut;
-    return this->intoPS(myOut, "PostScriptTest.ps");
+    std::ofstream myOut;
+    return this->intoPS(myOut, "PostScript.ps");
 }
 
 void Layered::intoPS(const std::string &fileName) {
-    std::fstream myOut;
+    std::ofstream myOut(std::ios::app);
     return this->intoPS(myOut, fileName);
 }
 
 void Layered::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScriptTest.ps");
+    return this->intoPS(fileStream, "PostScript.ps");
 }
 
 void Layered::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    fileStream.open(fileName);
+    fileStream.open(fileName, std::ios::app);
     fileStream << "gsave\n"
     //What goes here I'm still not sure of
     << "stroke\n"

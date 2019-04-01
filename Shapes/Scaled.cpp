@@ -9,7 +9,7 @@ Scaled::Scaled(std::unique_ptr<Shape> shape, const double &fx, const double &fy)
 
 void Scaled::intoPS() {
     std::fstream myOut;
-    return this->intoPS(myOut, "PostScriptTest.ps");
+    return this->intoPS(myOut, "PostScript.ps");
 }
 
 void Scaled::intoPS(const std::string &fileName) {
@@ -18,18 +18,17 @@ void Scaled::intoPS(const std::string &fileName) {
 }
 
 void Scaled::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScriptTest.ps");
+    return this->intoPS(fileStream, "PostScript.ps");
 }
 
 void Scaled::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    std::ofstream myfile;
-    myfile.open("PostScriptTest.ps", std::ios_base::app);
-    myfile << _fx << " " <<  _fy << " scale\n";
-    myfile.close();
+    fileStream.open(fileName, std::ios::app);
+    fileStream << _fx << " " <<  _fy << " scale\n";
+    fileStream.close();
     _shape->intoPS();
-    myfile.open("PostScriptTest.ps", std::ios_base::app);
-    myfile << 1/_fx << " " <<  1/_fy << " scale\n";
-    myfile.close();
+    fileStream.open(fileName, std::ios::app);
+    fileStream << 1/_fx << " " <<  1/_fy << " scale\n";
+    fileStream.close();
 }
 
 double Scaled::getWidth() {

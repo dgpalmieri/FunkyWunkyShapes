@@ -26,7 +26,7 @@ Vertical::Vertical(const map<Shape,string> myShapes){
 
 void Vertical::intoPS() {
     std::fstream myOut;
-    return this->intoPS(myOut, "PostScriptTest.ps");
+    return this->intoPS(myOut, "PostScript.ps");
 }
 
 void Vertical::intoPS(const std::string &fileName) {
@@ -35,13 +35,15 @@ void Vertical::intoPS(const std::string &fileName) {
 }
 
 void Vertical::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScriptTest.ps");
+    return this->intoPS(fileStream, "PostScript.ps");
 }
 
 void Vertical::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    fileStream.open(fileName);
+    fileStream.open(fileName, std::ios::app);
     fileStream << "gsave\n"
+
     //What goes here I'm still not sure of
+
     << "stroke\n"
     << "grestore";
     fileStream.close();

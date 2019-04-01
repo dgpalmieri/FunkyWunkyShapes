@@ -14,7 +14,7 @@
 
 class Layered : public Shape{
 public:
-    explicit Layered(const map<Shape,string> myShapes); //Don't know if it should be by reference
+    explicit Layered(const map<Shape, string> myShapes); //Don't know if it should be by reference
     void intoPS() override;
     void intoPS(const std::string & fileName) override;
     void intoPS(std::fstream & fileStream) override;
