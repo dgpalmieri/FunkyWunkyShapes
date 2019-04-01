@@ -41,6 +41,16 @@ TEST_CASE("Return correct width", "[getWidth()]") {
     REQUIRE(round( P2.getWidth() * 1000.0 ) / 1000.0 == 22.47);
 }
 
+TEST_CASE("Return correct center point", "[getCenter()]") {
+    Square S(5);
+    class Polygon P(6, 5);
+    class Polygon P2(7,10);
+    REQUIRE(round( S.getCenter().first * 1000.0 ) / 1000.0 == 7.5);
+    REQUIRE(round( S.getCenter().second * 1000.0 ) / 1000.0 == 7.5);
+    REQUIRE(round( P.getCenter().first * 1000.0 ) / 1000.0 == 12.5);
+    REQUIRE(round( P.getCenter().second * 1000.0 ) / 1000.0 == 12.99);
+}
+
 
 /*
 int main() {
