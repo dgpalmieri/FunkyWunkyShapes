@@ -28,7 +28,7 @@ Contributors: Andrew Parker, Joshua Byam, Dylan Palmieri
 
 # How to Use This Code:
 
-See the [Use Wiki](./How_To_Use_This_Code.md)
+See the [How-To file](./How_To_Use_This_Code.md).
 
 # Testing Strategy
 
