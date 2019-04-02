@@ -26,8 +26,8 @@ NOTE: Shape is a pure virtual base class, and any instantiated Shapes are essent
 There are four intoPS functions that all do the same things, but with slightly different effects.
 
 - intoPS() - This function appends to a file "PostScript.txt".
-- intoPS(fileName) - This function take a fileName (string) that is appends the PostScript output to.
-- intoPS(fileStream) - This function takes a fileStream, opens "PostScript.txt" in append mode, and appends the PostScript to the file.
-- intoPS(fileStream, fileName) - This function takes a fileStream, opens (or creates) the file fileName, and appends the PostScript output to the file.
+- intoPS(__fileName__) - This function take a fileName (string) that is appends the PostScript output to.
+- intoPS(__fileStream__) - This function takes a fileStream, opens "PostScript.txt" in append mode, and appends the PostScript to the file.
+- intoPS(__fileStream, fileName__) - This function takes a fileStream, opens (or creates) the file fileName, and appends the PostScript output to the file.
 
 
