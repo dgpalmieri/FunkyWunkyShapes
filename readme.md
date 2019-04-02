@@ -7,10 +7,7 @@ Contributors: Andrew Parker, Joshua Byam, Dylan Palmieri
 
 - **catch.hpp** - The Catch2 unit testing framework
 - **Tests.cpp** - A place where all our unit tests live
-	
-- **presentation_requirements.txt** - DELETE ME
-- **CMakeLists.txt** - ADD TO .GITIGNORE
-	
+
 ### Shapes/
 
 - **Shape.cpp and .h** - Shape is the base class for all the other classes and almost has the least amount of code. The Shape.cpp only contains a destructor and the .h has the same constructors, get functions and file streams as all the derived classes.
