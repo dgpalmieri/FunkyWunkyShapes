@@ -27,7 +27,7 @@ There are four intoPS functions that all do the same things, but with slightly d
 
 - intoPS() - This function appends to a file "PostScript.txt".
 - intoPS(_fileName_) - This function take a fileName (string) that is appends the PostScript output to.
-- intoPS(_fileStream_) - This function takes a fileStream, opens "PostScript.txt" in append mode, and appends the PostScript to the file.
+- intoPS(_fileStream_) - This function takes a fileStream (fstream), opens "PostScript.txt" in append mode, and appends the PostScript to the file.
 - intoPS(_fileStream, fileName_) - This function takes a fileStream, opens (or creates) the file fileName, and appends the PostScript output to the file.
 
 
