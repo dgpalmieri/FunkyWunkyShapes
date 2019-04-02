@@ -12,8 +12,8 @@ Contributors: Andrew Parker, Joshua Byam, Dylan Palmieri
 
 - **Shape.cpp and .h** - Shape is the base class for all the other classes and almost has the least amount of code. The Shape.cpp only contains a destructor and the .h has the same constructors, get functions and file streams as all the derived classes.
 - **Circle.cpp and .h** - A simple circle using the PostScript arc keyword. 
-- **Horizontal.cpp and .h** - The Horizontal constructor takes a vector of unique_ptrs to Shapes, and concatinates the shapes into one object. MOVE TO HOW-TO 
-- **Layered.cpp and .hpp** - Similar to Horizontal, but layers the shapes on top of each other.
+- **Horizontal.cpp and .h** - The Horizontal class is similar to Vertical, but is... Horizontal.
+- **Layered.cpp and .hpp** - Also similar to Vertical, but layers the shapes on top of each other.
 - **Polygon.cpp and .hpp** - Polygon takes an arbitrary number of sides and using some simple geometry creates a regular shape with your specified number of sides.
 - **Rectangle.cpp and .h** - Rectangle takes a side width and length, and creates a rectangle using the rlineto PostScript keyword.
 - **Rotated.cpp and .h** - Rotated is a bit more complex, and uses the Shape.getCenter() function to rotate the shape about it's center.
