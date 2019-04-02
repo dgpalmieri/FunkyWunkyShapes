@@ -1,7 +1,0 @@
-
-soft req's
-
-A look at syntax of shapes and functions
-How PostScript output works
-Talk about the answers in the readme.md file
-
