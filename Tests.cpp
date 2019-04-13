@@ -70,4 +70,6 @@ int main() {
 
     Triangle T(10);
     T.intoPS();
+
+
 }
