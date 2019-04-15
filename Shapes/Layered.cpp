@@ -15,10 +15,10 @@
 Layered::Layered(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)) {
     int width = 0;
     int height = 0;
-    for (auto i = _shapes.begin(); i != _shapes.end(); ++i)
+    for (auto & _shape : _shapes)
     {
-        if ( (*i)->getWidth() > width ) width = (*i)->getWidth();
-        if ( (*i)->getHeight() > height ) height = (*i)->getHeight();
+        if ( _shape->getWidth() > width ) width = static_cast<int>(_shape->getWidth());
+        if ( _shape->getHeight() > height ) height = static_cast<int>(_shape->getHeight());
     }
 
     _width = width;
@@ -43,8 +43,8 @@ void Layered::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios::app);
     fileStream << "gsave\n";
 
-    for (auto i = _shapes.begin(); i != _shapes.end(); ++i)
-        (*i)->intoPS(fileStream, fileName);
+    for (auto & _shape : _shapes)
+        _shape->intoPS(fileStream, fileName);
 
     fileStream << "\ngrestore\n";
     fileStream.close();

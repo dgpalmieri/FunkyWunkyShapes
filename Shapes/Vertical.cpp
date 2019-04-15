@@ -12,10 +12,10 @@
 Vertical::Vertical(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)){
     int width = 0;
     int height = 0;
-    for (auto i = _shapes.begin(); i != _shapes.end(); ++i)
+    for (auto & _shape : _shapes)
     {
-        height += (*i)->getHeight();
-        if ( (*i)->getWidth() > width ) width = (*i)->getWidth();
+        height += _shape->getHeight();
+        if ( _shape->getWidth() > width ) width = static_cast<int>(_shape->getWidth());
     }
     
     _width = width;
@@ -41,9 +41,9 @@ void Vertical::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios::app);
     fileStream << "gsave\n";
 
-    for (auto i = _shapes.begin(); i != _shapes.end(); ++i) {
-        (*i)->intoPS(fileStream, fileName);
-        fileStream << "\n0 " << (*i)->getHeight() << " translate\n";
+    for (auto & _shape : _shapes) {
+        _shape->intoPS(fileStream, fileName);
+        fileStream << "\n0 " << _shape->getHeight() << " translate\n";
     }
 
     fileStream << "\ngrestore\n";

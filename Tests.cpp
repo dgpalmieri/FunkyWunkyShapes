@@ -58,7 +58,7 @@ TEST_CASE("Return correct center point", "[getCenter()]") {
 int main() {
 
     std::ofstream myfile;
-    myfile.open("PostScript.ps", std::ofstream::out | std::ofstream::trunc);//Clears the file contents
+    myfile.open("PostScript.ps", std::ofstream::out | std::ofstream::trunc); //Clears the file contents
     myfile.close();
 
     Scaled R2(std::make_unique<Square>(20), 3, 3);

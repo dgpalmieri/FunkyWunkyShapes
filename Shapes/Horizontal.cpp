@@ -12,10 +12,10 @@
 Horizontal::Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)){
     int width = 0;
     int height = 0;
-    for (auto i = _shapes.begin(); i != _shapes.end(); ++i)
+    for (auto & _shape : _shapes)
     {
-        width += (*i)->getWidth();
-        if ( (*i)->getHeight() > height ) height = (*i)->getHeight();
+        width += _shape->getWidth();
+        if ( _shape->getHeight() > height ) height = static_cast<int>(_shape->getHeight());
     }
 
     _width = width;
@@ -41,9 +41,9 @@ void Horizontal::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios::app);
     fileStream << "gsave\n";
 
-    for (auto i = _shapes.begin(); i != _shapes.end(); ++i) {
-        (*i)->intoPS(fileStream, fileName);
-        fileStream << "\n" << (*i)->getHeight() << " 0 translate\n";
+    for (auto & _shape : _shapes) {
+        _shape->intoPS(fileStream, fileName);
+        fileStream << "\n" << _shape->getHeight() << " 0 translate\n";
     }
 
     fileStream << "\n grestore \n";
