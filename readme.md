@@ -1,3 +1,4 @@
+NOTE: This is a fork of the original project, intended for separate submission for Homework 5.
 This is our Repository for Assignment 2, Spring 2019 CS372 Software Construction.
 
 Contributors: Andrew Parker, Joshua Byam, Dylan Palmieri
