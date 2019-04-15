@@ -12,9 +12,6 @@
 class Scaled : public Shape{
 public:
     Scaled(std::unique_ptr<Shape>, const double & fx, const double & fy);
-    void intoPS() override;
-    void intoPS(const std::string & fileName) override;
-    void intoPS(std::fstream & fileStream) override;
     void intoPS(std::fstream & fileStream, const std::string & fileName) override;
     double getWidth() override;
     double getHeight() override;

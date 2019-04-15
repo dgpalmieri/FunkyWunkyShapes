@@ -10,9 +10,6 @@
 class Polygon: public Shape {
 public:
     Polygon(const int & numOfSides, const int & sideLength);
-    void intoPS() override;
-    void intoPS(const std::string & fileName) override;
-    void intoPS(std::fstream & fileStream) override;
     void intoPS(std::fstream & fileStream, const std::string & fileName) override;
     double getWidth() override;
     double getHeight() override;

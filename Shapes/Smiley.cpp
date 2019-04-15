@@ -8,20 +8,6 @@
 
 Smiley::Smiley(const int & r): _radius(std::abs(r)){}
 
-void Smiley::intoPS() {
-    std::fstream myOut;
-    return this->intoPS(myOut, "PostScriptTest.ps");
-}
-
-void Smiley::intoPS(const std::string &fileName) {
-    std::fstream myOut;
-    return this->intoPS(myOut, fileName);
-}
-
-void Smiley::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScriptTest.ps");
-}
-
 void Smiley::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName);
     fileStream << "gsave \n"

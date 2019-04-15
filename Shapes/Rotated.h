@@ -11,9 +11,6 @@
 class Rotated : public Shape{
 public:
     Rotated(std::unique_ptr<Shape>,int angle);
-    void intoPS() override;
-    void intoPS(const std::string & fileName) override;
-    void intoPS(std::fstream & fileStream) override;
     void intoPS(std::fstream & fileStream, const std::string & fileName) override;
     double getWidth() override;
     double getHeight() override;

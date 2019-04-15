@@ -10,9 +10,6 @@
 class Spacer : public Shape{
 public:
     explicit Spacer(const double & width, const double & height);
-    void intoPS() override;
-    void intoPS(const std::string & fileName) override;
-    void intoPS(std::fstream & fileStream) override;
     void intoPS(std::fstream & fileStream, const std::string & fileName) override;
     double getWidth() override;
     double getHeight() override;

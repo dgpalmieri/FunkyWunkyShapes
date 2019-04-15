@@ -10,8 +10,8 @@
 
 // Takes a map that holds pairs of (Shape objects, string shapeID)
 Vertical::Vertical(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)){
-    int width = 0;
-    int height = 0;
+    double width = 0;
+    double height = 0;
     for (auto & _shape : _shapes)
     {
         height += _shape->getHeight();
@@ -21,20 +21,6 @@ Vertical::Vertical(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std
     _width = width;
     _height = height;
     
-}
-
-void Vertical::intoPS() {
-    std::fstream myOut;
-    return this->intoPS(myOut, "PostScript.ps");
-}
-
-void Vertical::intoPS(const std::string &fileName) {
-    std::fstream myOut;
-    return this->intoPS(myOut, fileName);
-}
-
-void Vertical::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScript.ps");
 }
 
 void Vertical::intoPS(std::fstream &fileStream, const std::string &fileName) {

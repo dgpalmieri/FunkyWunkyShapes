@@ -12,21 +12,6 @@ Polygon::Polygon(const int & numOfSides, const int & sideLength)
     : _numOfSides(numOfSides), _sideLength(sideLength)
     {}
 
-
-void Polygon::intoPS() {
-    std::fstream myOut;
-    return this->intoPS(myOut, "PostScript.ps");
-}
-
-void Polygon::intoPS(const std::string &fileName) {
-    std::fstream myOut;
-    return this->intoPS(myOut, fileName);
-}
-
-void Polygon::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScript.ps");
-}
-
 void Polygon::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios_base::app);
     fileStream << "% Polygon\n"

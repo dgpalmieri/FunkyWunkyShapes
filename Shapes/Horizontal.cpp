@@ -23,20 +23,6 @@ Horizontal::Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes
 
 }
 
-void Horizontal::intoPS() {
-    std::fstream myOut;
-    return this->intoPS(myOut, "PostScript.ps");
-}
-
-void Horizontal::intoPS(const std::string &fileName) {
-    std::fstream myOut;
-    return this->intoPS(myOut, fileName);
-}
-
-void Horizontal::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScript.ps");
-}
-
 void Horizontal::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios::app);
     fileStream << "gsave\n";

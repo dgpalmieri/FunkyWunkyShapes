@@ -8,20 +8,6 @@
 
 Circle::Circle(const int & r): _radius(std::abs(r)){}
 
-void Circle::intoPS() {
-    std::fstream myOut;
-    return this->intoPS(myOut, "PostScriptTest.ps");
-}
-
-void Circle::intoPS(const std::string &fileName) {
-    std::fstream myOut;
-    return this->intoPS(myOut, fileName);
-}
-
-void Circle::intoPS(std::fstream &fileStream) {
-    return this->intoPS(fileStream, "PostScriptTest.ps");
-}
-
 void Circle::intoPS(std::fstream &fileStream, const std::string &fileName) {
     fileStream.open(fileName, std::ios_base::app);
     fileStream << "% Circle\n"
