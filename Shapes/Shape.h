@@ -11,9 +11,9 @@
 class Shape {
 public:
     virtual ~Shape();
-    virtual void intoPS() = 0;
-    virtual void intoPS(const std::string & fileName) = 0;
-    virtual void intoPS(std::fstream & fileStream) = 0;
+    virtual void intoPS();
+    virtual void intoPS(const std::string & fileName);
+    virtual void intoPS(std::fstream & fileStream);
     virtual void intoPS(std::fstream & fileStream, const std::string & fileName) = 0;
     virtual double getWidth() = 0;
     virtual double getHeight() = 0;
