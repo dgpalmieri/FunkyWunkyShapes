@@ -12,9 +12,8 @@
 
 class Composite : public Shape{
 
-    explicit Composite(std::vector<std::unique_ptr<Shape>> & myShapes);
-    void intoPS(std::fstream & fileStream, const std::string & fileName) override;
-    virtual void compositeType() = 0;
+    void intoPS(std::fstream &, const std::string &) override;
+    virtual void compositeType(std::fstream &, const std::string &) = 0;
 
 };
 

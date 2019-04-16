@@ -23,17 +23,12 @@ Horizontal::Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes
 
 }
 
-void Horizontal::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    fileStream.open(fileName, std::ios::app);
-    fileStream << "gsave\n";
 
+void Horizontal::compositeType(std::fstream & fileStream, const std::string & fileName) {
     for (auto & _shape : _shapes) {
         _shape->intoPS(fileStream, fileName);
         fileStream << "\n" << _shape->getHeight() << " 0 translate\n";
     }
-
-    fileStream << "\n grestore \n";
-    fileStream.close();
 }
 
 

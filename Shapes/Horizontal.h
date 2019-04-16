@@ -5,15 +5,15 @@
 #ifndef FUNKYWUNKYSHAPES_HORIZONTAL_H
 #define FUNKYWUNKYSHAPES_HORIZONTAL_H
 
-#include "Shape.h"
+#include "Composite.hpp"
 #include <vector>
 #include <string>
 #include <memory>
 
-class Horizontal : public Shape{
+class Horizontal : public Composite{
 public:
     explicit Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes);
-    void intoPS(std::fstream & fileStream, const std::string & fileName) override;
+    void compositeType(std::fstream &, const std::string &) override;
     double getWidth() override;
     double getHeight() override;
 private:
