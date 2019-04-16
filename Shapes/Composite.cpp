@@ -4,10 +4,13 @@
 
 #include "Composite.hpp"
 
-Composite::Composite(std::vector<std::unique_ptr<Shape>> &myShapes) {
-
-}
 
 void Composite::intoPS(std::fstream &fileStream, const std::string &fileName) {
+    fileStream.open(fileName, std::ios::app);
+    fileStream << "gsave\n";
 
+    compositeType(fileStream, fileName);
+
+    fileStream << "\n grestore \n";
+    fileStream.close();
 }
