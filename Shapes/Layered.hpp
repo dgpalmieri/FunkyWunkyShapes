@@ -18,7 +18,7 @@
 class Layered : public Shape{
 public:
     explicit Layered(std::vector<std::unique_ptr<Shape>> & myShapes);
-    void intoPS(std::fstream & fileStream, const std::string & fileName) override;
+    void compositeType(std::fstream &, const std::string &) override;
     double getWidth() override;
     double getHeight() override;
 private:

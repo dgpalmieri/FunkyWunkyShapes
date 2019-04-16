@@ -26,15 +26,9 @@ Layered::Layered(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::
 
 }
 
-void Layered::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    fileStream.open(fileName, std::ios::app);
-    fileStream << "gsave\n";
-
+void Layered::compositeType(std::fstream & fileStream, const std::string & fileName){
     for (auto & _shape : _shapes)
         _shape->intoPS(fileStream, fileName);
-
-    fileStream << "\ngrestore\n";
-    fileStream.close();
 }
 
 
