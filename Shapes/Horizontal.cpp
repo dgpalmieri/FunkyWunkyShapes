@@ -8,7 +8,7 @@
 #include <string>
 #include <memory>
 
-// Takes a map that holds pairs of (Shape objects, string shapeID)
+
 Horizontal::Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)){
     int width = 0;
     int height = 0;

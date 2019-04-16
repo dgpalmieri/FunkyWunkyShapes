@@ -8,7 +8,7 @@
 #include <string>
 #include <map>
 
-// Takes a map that holds pairs of (Shape objects, string shapeID)
+
 Vertical::Vertical(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)){
     double width = 0;
     double height = 0;
