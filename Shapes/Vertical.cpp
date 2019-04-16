@@ -9,7 +9,8 @@
 #include <map>
 
 
-Vertical::Vertical(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)){
+Vertical::Vertical(std::vector<std::unique_ptr<Shape>> & myShapes)
+                   : _shapes(std::move(myShapes)){
     double width = 0;
     double height = 0;
     for (auto & _shape : _shapes)
@@ -23,17 +24,12 @@ Vertical::Vertical(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std
     
 }
 
-void Vertical::intoPS(std::fstream &fileStream, const std::string &fileName) {
-    fileStream.open(fileName, std::ios::app);
-    fileStream << "gsave\n";
 
+void Vertical::compositeType(std::fstream & fileStream, const std::string & fileName) {
     for (auto & _shape : _shapes) {
         _shape->intoPS(fileStream, fileName);
         fileStream << "\n0 " << _shape->getHeight() << " translate\n";
     }
-
-    fileStream << "\ngrestore\n";
-    fileStream.close();
 }
 
 
@@ -44,4 +40,5 @@ double Vertical::getWidth(){
 double Vertical::getHeight(){
     return _height;
 }
+
 
