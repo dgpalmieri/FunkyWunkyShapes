@@ -13,8 +13,8 @@
 #include <map>
 
 Layered::Layered(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)) {
-    int width = 0;
-    int height = 0;
+    double width = 0;
+    double height = 0;
     for (auto & _shape : _shapes)
     {
         if ( _shape->getWidth() > width ) width = static_cast<int>(_shape->getWidth());

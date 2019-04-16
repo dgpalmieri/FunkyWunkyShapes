@@ -10,8 +10,8 @@
 
 
 Horizontal::Horizontal(std::vector<std::unique_ptr<Shape>> & myShapes) : _shapes(std::move(myShapes)){
-    int width = 0;
-    int height = 0;
+    double width = 0;
+    double height = 0;
     for (auto & _shape : _shapes)
     {
         width += _shape->getWidth();
